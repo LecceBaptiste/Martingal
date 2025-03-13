@@ -86,5 +86,8 @@ index_html = """
 </html>
 """
 
+from flask import send_file
 
-    
+@app.route('/download_db')
+def download_db():
+    return send_file('participants.db', as_attachment=True)
